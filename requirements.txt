@@ -1,0 +1,7 @@
+gunicorn==21.2.0         # WSGI HTTP server for UNIX
+Flask==2.3.2             # Flask web framework
+requests==2.31.0         # For making HTTP requests
+flask-cors==3.0.10       # CORS support for Flask
+flask-sqlalchemy==2.5.1  # SQLAlchemy support for Flask
+pandas==2.0.3            # Data manipulation and analysis
+numpy==1.25.3            # Numerical computing library
