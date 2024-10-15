@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Generator</title>
+    <link rel="stylesheet" href="static\css\styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Schedule Generator</h1>
+
+    <!-- Teacher Input -->
+    <h2>Teachers</h2>
+    <div id="teachers">
+        <div>
+            <label for="teacherName">Teacher Name</label>
+            <input type="text" id="teacherName" placeholder="Enter teacher's name (e.g., Dr. Hioual)">
+            
+            <label for="teacherAvailability">Available Days</label>
+            <div id="teacherAvailability" class="checkbox-group frame">
+                <label><input type="checkbox" value="Sunday"> Sunday</label>
+                <label><input type="checkbox" value="Monday"> Monday</label>
+                <label><input type="checkbox" value="Tuesday"> Tuesday</label>
+                <label><input type="checkbox" value="Wednesday"> Wednesday</label>
+                <label><input type="checkbox" value="Thursday"> Thursday</label>
+            </div>
+            
+            
+            <label for="mobility">Mobility</label>
+            <select id="mobility">
+                <option value="low">Low</option>
+                <option value="high">High</option>
+            </select>
+        </div>
+    </div>
+
+    <button onclick="addTeacher()">Add Teacher</button>
+
+    <!-- Module Input -->
+    <h2>Modules</h2>
+    <div id="modules">
+        <div>
+            <label for="moduleName">Module Name</label>
+            <input type="text" id="moduleName" placeholder="Enter module name (e.g., Math 101)">
+            
+            <label for="group">Group</label>
+            <input type="text" id="group" placeholder="Enter group (e.g., Group A)">
+            
+            <label for="moduleTeacher">Teacher</label>
+            <select id="moduleTeacher"></select>
+            
+            <label for="duration">Duration (hours)</label>
+            <input type="number" id="duration" placeholder="Enter duration (e.g., 2)" min="1" max="4">
+
+            <label for="groupCapacity">Group Capacity</label>
+            <input type="number" id="groupCapacity" placeholder="Enter group capacity" min="1">
+
+        </div>
+    </div>
+
+    <button onclick="addModule()">Add Module</button>
+
+    <!-- Room Input -->
+    <h2>Rooms</h2>
+    <div id="rooms">
+        <div>
+            <label for="roomName">Room Name</label>
+            <input type="text" id="roomName" placeholder="Enter room name (e.g., Room 101)">
+            
+            <label for="roomCapacity">Room Capacity</label>
+            <input type="number" id="roomCapacity" placeholder="Enter room capacity" min="1">
+
+            <label for="roomFloor">Room Floor</label>
+            <input type="number" id="roomFloor" placeholder="Enter room floor" min="1">
+
+        </div>
+    </div>
+
+    <button onclick="addRoom()">Add Room</button>
+
+    <!-- Generate Schedule -->
+    <button onclick="generateSchedule()">Generate Schedule</button>
+
+    <!-- Download PDF -->
+    <button onclick="downloadPDF()">Download as PDF</button>
+
+    <div id="scheduleTable"></div>
+</div>
+
+<script src="static\js\script.js"></script>
+<script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+
+</body>
+</html>
